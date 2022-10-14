@@ -8,7 +8,7 @@ function App() {
     <div className="App">
         <div className="">
             <div className="image-wrapper">
-                <img src={bean} alt="Azuki Bean # 5142"/>
+                <img src={bean} alt="Azuki Bean #5142"/>
             </div>
         </div>
 
