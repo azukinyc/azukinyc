@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from './logo.svg';
-import bean from './assets/images/bean-5142.png'
+import bean from './assets/images/bean-7783.png'
 import './App.css';
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
     <div className="App">
         <div className="">
             <div className="image-wrapper">
-                <img src={bean} alt="Azuki Bean #5142"/>
+                <img src={bean} alt="Azuki Bean #7783"/>
             </div>
         </div>
 
