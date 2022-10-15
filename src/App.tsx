@@ -2,6 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import bean from './assets/images/bean-7783.png'
 import './App.css';
+import Navigation from "./components/navigation/Navigation";
 
 function App() {
   return (
@@ -10,22 +11,10 @@ function App() {
             <div className="image-wrapper">
                 <img src={bean} alt="Azuki Bean #7783"/>
             </div>
+            <div className="navigation-positioner">
+                <Navigation/>
+            </div>
         </div>
-
-      {/*<header className="App-header">*/}
-      {/*  <img src={logo} className="App-logo" alt="logo" />*/}
-      {/*  <p>*/}
-      {/*    Edit <code>src/App.tsx</code> and save to reload.*/}
-      {/*  </p>*/}
-      {/*  <a*/}
-      {/*    className="App-link"*/}
-      {/*    href="https://reactjs.org"*/}
-      {/*    target="_blank"*/}
-      {/*    rel="noopener noreferrer"*/}
-      {/*  >*/}
-      {/*    Learn React*/}
-      {/*  </a>*/}
-      {/*</header>*/}
     </div>
   );
 }

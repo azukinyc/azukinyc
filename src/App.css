@@ -43,7 +43,7 @@
   max-width: 500px;
   max-height: 500px;
   position: absolute;
-  top: 50%;
+  top: 44%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -51,4 +51,10 @@
 .image-wrapper img {
   width: auto;
   height: 100%;
+}
+
+.navigation-positioner {
+  position: absolute;
+  bottom: 50px;
+  width: 100%;
 }
