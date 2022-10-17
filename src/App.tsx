@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import bean from './assets/images/bean-7783.png'
 import './App.css';
 import Navigation from "./components/navigation/Navigation";
