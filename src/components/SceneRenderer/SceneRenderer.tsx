@@ -44,7 +44,7 @@ function SceneRenderer() {
                 <div className="image-wrapper">
                     <img id="bean-img" src={beanImageSrc} alt={beanAltText}/>
                     <div className="credits">
-                        <figcaption>This bean belongs to: <a href={bean.twitterHandle}>${bean.name}</a></figcaption>
+                        <figcaption>This bean belongs to: <strong><a href={bean.twitterHandle}>${bean.name}</a></strong></figcaption>
                     </div>
                 </div>
             </div>
