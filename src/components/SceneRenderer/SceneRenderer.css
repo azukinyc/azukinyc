@@ -1,0 +1,4 @@
+#bean-img {
+    transition: opacity 1s ease-in;
+    opacity: 0;
+}
