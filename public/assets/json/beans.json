@@ -1,0 +1,56 @@
+[
+  {
+    "twitterHandle": "https://twitter.com/charlesc_eth",
+    "id" : 9048,
+    "name": "charlesc.eth",
+    "background": {
+      "name": "OFF WHITE D",
+      "hex": "#a19e99"
+    }
+  },
+  {
+    "twitterHandle": "https://twitter.com/dgtlemissions",
+    "id" : 1986,
+    "name": "🫧DGTL (🦧🌈⛩)",
+    "background": {
+      "name": "OFF WHITE D",
+      "hex": "#a19e99"
+    }
+  },
+  {
+    "twitterHandle": "https://twitter.com/EndianHere",
+    "id" : 11594,
+    "name": "Endian.eth",
+    "background": {
+      "name": "DARK PURPLE",
+      "hex": "#46436f"
+    }
+  },
+  {
+    "twitterHandle": "https://twitter.com/toyninja",
+    "id" : 7783,
+    "name": "ToyNinja 🥷",
+    "background": {
+      "name": "DARK BLUE",
+      "hex": "#2e4873"
+    }
+  },
+  {
+    "twitterHandle": "https://twitter.com/TotsNFTs",
+    "id" : 7820,
+    "name": "Tots 🍵 🦇🔊",
+    "background": {
+      "name": "OFF WHITE A",
+      "hex": "#eff3f2"
+    }
+  },
+  {
+    "twitterHandle": "https://twitter.com/0xsiris_dev",
+    "id" : 1527,
+    "name": "Osama 🦦",
+    "background": {
+      "name": "OFF WHITE A",
+      "hex": "#eff3f2"
+    }
+  }
+]
