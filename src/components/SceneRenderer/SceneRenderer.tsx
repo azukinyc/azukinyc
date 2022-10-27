@@ -40,8 +40,13 @@ function SceneRenderer() {
     const beanImageSrc = `../../assets/images/final-${bean.id}.png`;
 
     return (
-            <div className="image-wrapper">
-                <img id="bean-img" src={beanImageSrc} alt={beanAltText}/>
+            <div>
+                <div className="image-wrapper">
+                    <img id="bean-img" src={beanImageSrc} alt={beanAltText}/>
+                    <div className="credits">
+                        <figcaption>This bean belongs to: <a href={bean.twitterHandle}>${bean.name}</a></figcaption>
+                    </div>
+                </div>
             </div>
             );
 }
