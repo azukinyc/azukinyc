@@ -17,6 +17,7 @@ export default function Cursor() {
     const [mousePosition, setMousePosition] = useState<MousePosition>({x: 0, y: 0})
     const [mouseVisible, setMouseVisible] = useState(false)
     const [cursorSize, setCursorSize] = useState(32)
+    const [cursorScale, setCursorScale] = useState(1)
     const [viewportWidthHeight, setViewportWidthHeight] = useState({width: 0, height: 0})
 
     useEffect(() => {
@@ -37,8 +38,10 @@ export default function Cursor() {
             width: 0,
             height: 0
         }
+
         let cursorSize = 32;
         let animatedCursorSize = 32;
+        let mouseFadeOffsetSize = 20;
 
         const mouse = Mouse.getInstance()
         const ticker = Ticker.getInstance()
@@ -60,10 +63,11 @@ export default function Cursor() {
             position.x = mouseEvent.x
             position.y = mouseEvent.y
 
-            if (mouseEvent.x < 4 ||
-                mouseEvent.x > viewportInformation.width - 4 ||
-                mouseEvent.y < 4 ||
-                mouseEvent.y > viewportInformation.height - 4
+
+            if (mouseEvent.x < mouseFadeOffsetSize ||
+                mouseEvent.x > viewportInformation.width - mouseFadeOffsetSize ||
+                mouseEvent.y < mouseFadeOffsetSize ||
+                mouseEvent.y > viewportInformation.height - mouseFadeOffsetSize
             ) {
                 cursorSize = 0
             } else if (mouseEvent.y > 500) {
@@ -90,11 +94,6 @@ export default function Cursor() {
                 animatedPosition.x += ((position.x - (width/2)) - animatedPosition.x) * 0.1 * speed
                 animatedPosition.y += ((position.y - (height/2)) - animatedPosition.y) * 0.1 * speed
 
-                console.log(width, height);
-                console.log(position.x, position.y);
-                console.log(animatedPosition.x, animatedPosition.y);
-                console.log('\n\n')
-
 
                 //animate mouse position
                 setMousePosition({
@@ -102,23 +101,24 @@ export default function Cursor() {
                     y: animatedPosition.y
                 })
 
-                //animated mouse size
-                animatedCursorSize += (cursorSize - animatedCursorSize) * 0.3
+                //animated mouse size, cursorSize is used to deternmine scaling effect.
+                animatedCursorSize += (cursorSize - animatedCursorSize) * 0.1 * speed
                 setCursorSize(animatedCursorSize)
+                setCursorScale(animatedCursorSize / width)
             }
         })
-
-
     }, [])
 
     const display = mouseVisible ? 'flex' : 'none'
+//    const transformString = `matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, ${mousePosition.x}, ${mousePosition.y}, 0, 1)`
+    const transformString = `matrix(${cursorScale}, 0, 0, ${cursorScale}, ${mousePosition.x}, ${mousePosition.y})`
     return (
         <>
         <div ref={cursorElemRef} className="cursor azuki" style={{
-                width: `${cursorSize}px`,
-                height: `${cursorSize}px`,
+//                width: `${cursorSize}px`,
+//                height: `${cursorSize}px`,
                 display: `${display}`,
-                transform: `matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, ${mousePosition.x}, ${mousePosition.y}, 0, 1)`
+                transform: `${transformString}`
             }}>
             <img src={bean} className="bean" alt="Bean Cursor" />
         </div>
