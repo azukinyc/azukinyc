@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css';
-import Navigation from "./components/navigation/Navigation";
+import Navigation from "./components/Navigation/Navigation";
 import SceneRenderer from "./components/SceneRenderer/SceneRenderer";
-import Cursor from "./components/mouse/Cursor";
+import Cursor from "./components/Mouse/Cursor";
 
 function App() {
   return (

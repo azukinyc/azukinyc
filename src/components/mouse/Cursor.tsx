@@ -1,8 +1,8 @@
+import './Cursor.css'
 import {useEffect, useRef, useState} from "react";
 import { Mouse, Ticker, Viewport } from '@unreal/pan';
 import * as pan from "@unreal/pan";
-import bean from '../../assets/svgs/bean-mega-fatty.svg'
-
+import bean from '../../assets/svgs/bean.svg'
 interface MousePosition {
     x: number
     y: number
@@ -40,10 +40,9 @@ export default function Cursor() {
         let cursorSize = 32;
         let animatedCursorSize = 32;
 
-//        const mouse = pan.mouse()
         const mouse = Mouse.getInstance()
-        const ticker = pan.ticker()
-        const viewport = pan.viewport({fireViewportInformationOnListen: true})
+        const ticker = Ticker.getInstance()
+        const viewport = Viewport.getInstance({fireViewportInformationOnListen: true})
 
         viewport!.on('resize', (resizeEvent: any) => {
             viewportInformation.width = resizeEvent.width;
@@ -74,16 +73,28 @@ export default function Cursor() {
             }
         })
 
-        ticker!.on('tick', () => {
+        ticker!.on('tick', (tickEvent) => {
             if (cursorElemRef.current !== null) {
                 const elem = cursorElemRef.current as HTMLElement
                 const width = elem.offsetWidth
                 const height = elem.offsetHeight
 
+
+                // the idea here is that the animation on new Mac laptops is really nice, because 120hz
+                // on 60fps devices it feels a bit slower, so double the speed, usually this is not a problem
+                // when animating against time elapsed, but this animation depends on times ran.
+                const speed = Math.floor(tickEvent.delta / 8.3)
+
                 // we apply a lerp effect to smooth our movement,
                 // plus calculate the size of the cursor to factor it into the position
-                animatedPosition.x += ((position.x - (width/2)) - animatedPosition.x) * 0.1
-                animatedPosition.y += ((position.y - (height/2)) - animatedPosition.y) * 0.1
+                animatedPosition.x += ((position.x - (width/2)) - animatedPosition.x) * 0.1 * speed
+                animatedPosition.y += ((position.y - (height/2)) - animatedPosition.y) * 0.1 * speed
+
+                console.log(width, height);
+                console.log(position.x, position.y);
+                console.log(animatedPosition.x, animatedPosition.y);
+                console.log('\n\n')
+
 
                 //animate mouse position
                 setMousePosition({
@@ -109,7 +120,7 @@ export default function Cursor() {
                 display: `${display}`,
                 transform: `matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, ${mousePosition.x}, ${mousePosition.y}, 0, 1)`
             }}>
-            <img src={bean} className="logo react" alt="React logo" />
+            <img src={bean} className="bean" alt="Bean Cursor" />
         </div>
         </>
     )
