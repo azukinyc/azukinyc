@@ -1,8 +1,9 @@
-import React, {useEffect, useState} from 'react';
+import {useEffect, useState} from 'react';
+import React from 'react';
 import beanJson from "../../assets/json/beans.json";
-import './SceneRenderer.css';
+import './BeansHero.css';
 
-function SceneRenderer() {
+function BeansHero() {
     function getRandomInt(max: number) {
         return Math.floor(Math.random() * max);
     }
@@ -51,4 +52,4 @@ function SceneRenderer() {
             );
 }
 
-export default SceneRenderer;
+export default BeansHero;

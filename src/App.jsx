@@ -2,7 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css';
 import Navigation from "./components/Navigation/Navigation";
-import SceneRenderer from "./components/SceneRenderer/SceneRenderer";
+import BeansHero from "./components/Hero/BeansHero";
 import Cursor from "./components/Mouse/Cursor";
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
       <div className="App">
           <Cursor />
           <div className="">
-              <SceneRenderer/>
+              <BeansHero/>
               <div className="navigation-positioner">
                   <Navigation/>
               </div>
