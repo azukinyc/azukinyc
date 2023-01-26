@@ -1,7 +1,6 @@
 import './Cursor.css'
 import {useEffect, useRef, useState} from "react";
 import { Mouse, Ticker, Viewport } from '@unreal/pan';
-import * as pan from "@unreal/pan";
 import bean from '../../assets/svgs/bean.svg'
 interface MousePosition {
     x: number
@@ -19,6 +18,7 @@ export default function Cursor() {
     const [cursorSize, setCursorSize] = useState(32)
     const [cursorScale, setCursorScale] = useState(1)
     const [viewportWidthHeight, setViewportWidthHeight] = useState({width: 0, height: 0})
+    const [cursorColor, setCursorColor] = useState('#FFF')
 
     useEffect(() => {
         console.log(viewportWidthHeight)
@@ -117,6 +117,7 @@ export default function Cursor() {
         <div ref={cursorElemRef} className="cursor azuki" style={{
 //                width: `${cursorSize}px`,
 //                height: `${cursorSize}px`,
+//                backgroundColor: `${cursorColor}`,
                 display: `${display}`,
                 transform: `${transformString}`
             }}>
