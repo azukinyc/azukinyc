@@ -50,6 +50,8 @@
     mask-image: url('../../assets/svgs/bubble.svg');
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
+    transition: opacity 1s ease-out;
+    opacity: 0;
 }
 
 .vvchecks .frame .canvas .cell:nth-child(8n+8) {
