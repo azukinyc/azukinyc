@@ -15,31 +15,11 @@ function randomIntFromInterval(min: number, max: number) {
 const rndInt = randomIntFromInterval(1, 6)
 
 function VVChecks() {
-
     const arr: string[] = []
 
     for (let i = 0; i < 80; i++) {
         arr.push(url(randomIntFromInterval(0, 20000)))
     }
-
-    console.log(arr)
-
-//    useEffect(() => {
-//        var img = document.querySelector('img')
-//
-//        function loaded() {
-//            console.log('loaded')
-//        }
-//
-//        if (img && img.complete) {
-//            loaded()
-//        } else {
-//            img!.addEventListener('load', loaded)
-//            img!.addEventListener('error', function () {
-//                alert('error')
-//            })
-//        }
-//    }, [])
 
     const log = (elem: HTMLElement) => {
         elem.style.opacity = '1'
