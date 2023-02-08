@@ -5,7 +5,7 @@ import styles from './VVChecks.module.css'
 
  const url = (id: number): string => {
     //https://azkimg.imgix.net/images_squareface/final-14989.png?fm=jpg&w=1536
-    return 'https://azkimg.imgix.net/images_squareface/final-' + id + '.png?fm=jpg&w=80'
+    return 'https://azkimg.imgix.net/images_squareface/final-' + id + '.png?fm=jpg&w=40'
 }
 
 function randomIntFromInterval(min: number, max: number) {
