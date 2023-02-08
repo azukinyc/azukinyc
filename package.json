@@ -18,6 +18,7 @@
     "@types/react-dom": "^18.0.9",
     "@unreal/pan": "^0.0.21",
     "@vitejs/plugin-react": "^3.0.0",
+    "typescript": "^4.9.5",
     "vite": "^4.0.0"
   }
 }
