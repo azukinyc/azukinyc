@@ -18,7 +18,7 @@ function VVChecks() {
     const arr: string[] = []
 
     for (let i = 0; i < 80; i++) {
-        arr.push(url(randomIntFromInterval(0, 20000)))
+        arr.push(url(randomIntFromInterval(1, 19949)))
     }
 
     const log = (elem: HTMLElement) => {
