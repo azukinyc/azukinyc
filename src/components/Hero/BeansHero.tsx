@@ -38,7 +38,7 @@ function BeansHero() {
     }
 
     const beanAltText = `Azuki Bean ${bean.id}`;
-    const beanImageSrc = `../../assets/images/final-${bean.id}.png`;
+    const beanImageSrc = `../../assets/images/2000px/${bean.id}.png`;
 
     return (
             <div>
