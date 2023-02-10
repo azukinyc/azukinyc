@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import styles from './VVChecks.module.css'
 
 const url = (id: number): string => {
-    return '/assets/images/tinybeans/final-' + id + '.png'
+    return '/assets/images/160px/' + id + '.png'
 }
 
 function randomIntFromInterval(min: number, max: number) {
